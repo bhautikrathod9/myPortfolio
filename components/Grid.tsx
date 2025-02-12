@@ -1,27 +1,26 @@
 import React from 'react'
 import { BentoGrid, BentoGridItem } from './ui/BentoGrid'
 import { gridItems } from '@/data'
-import { img } from 'motion/react-m'
 
-const Grid = () => {
+function Grid() {
   return (
     <section id='about'>
-        <BentoGrid>
-            {gridItems.map(({id, title, description, className, imgClassName, titleClassName, spareImg}) => (
-                <BentoGridItem  
-                    id={id}
-                    key={id}
-                    title={title}
-                    description={description}
-                    className={className}
-                    img={imgClassName}
-                    imgClassName={imgClassName}
-                    titleClassName={titleClassName}
-                    spareImg={spareImg}
-
-                />
-            ))}
-        </BentoGrid>
+      <BentoGrid>
+        {gridItems.map(({ id, title, description, className, img, imgClassName, titleClassName, spareImg }) => {
+          return (
+            <BentoGridItem
+              id={id}
+              key={id}
+              title={title}
+              description={description}
+              className={className}
+              img={img}
+              imgClassName={imgClassName}
+              titleClassName={titleClassName}
+              spareImg={spareImg} />
+          )
+        })}
+      </BentoGrid>
     </section>
   )
 }
